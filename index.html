@@ -57,15 +57,13 @@
   .topbar-logo {
   height: 54px;
   width: 54px;
-  margin-right: 14px;
-  margin-left: 18px;
+  margin-right: 8px;
+  margin-left: 0;
   object-fit: contain;
-  /* suppression du position: absolute et des styles de centrage vertical */
   position: static;
   left: unset;
   bottom: unset;
   transform: none;
-  margin: 0 14px 0 18px;
   z-index: 20;
 }
   .topbar-title {
@@ -73,9 +71,11 @@
   font-size: 2.1em;
   font-weight: 700;
   letter-spacing: 0.12em;
-  margin-left: 14px;
-  flex: 1;
-  text-align: center;
+  margin-left: 0;
+  flex: 0 1 auto;
+  text-align: left;
+  display: flex;
+  align-items: center;
 }
   body {
   /* plus de padding car la barre n'est plus fixe */
