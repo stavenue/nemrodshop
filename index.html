@@ -5,6 +5,42 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Shop Nemrod</title>
 <style>
+  /* Barre du haut avec logo et titre */
+  .topbar {
+    width: 100vw;
+    height: 80px;
+    background: #4B0082;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+  }
+  .topbar-logo {
+    height: 54px;
+    width: 54px;
+    margin-right: 18px;
+    margin-left: 18px;
+    object-fit: contain;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+  .topbar-title {
+    color: #fff;
+    font-size: 2.1em;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    flex: 1;
+    text-align: center;
+    margin-right: 72px;
+  }
+  body {
+    padding-top: 80px;
+  }
   body {
     font-family: "Poppins", sans-serif;
     margin: 0;
@@ -196,7 +232,10 @@
 </head>
 <body>
 
-<h1>🛍️ Shop Nemrod</h1>
+  <div class="topbar">
+    <img src="logo.png" alt="Logo" class="topbar-logo">
+    <div class="topbar-title">NEMROD</div>
+  </div>
 <div class="products-grid" id="shop"></div>
 <div id="product-detail" class="hidden"></div>
 
