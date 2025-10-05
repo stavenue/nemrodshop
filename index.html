@@ -381,14 +381,19 @@
   }
 
   .bottom-menu-sep {
-    width: 100vw;
-    height: 4px;
-    background: #b4b4b4;
-    margin: 0;
-    padding: 0;
-    border: none;
-    display: block;
-  }
+  position: fixed;
+  left: 0;
+  bottom: 130px;
+  width: 100vw;
+  height: 5px;
+  background: #b4b4b4;
+  margin: 0;
+  padding: 0;
+  border: none;
+  z-index: 150;
+  display: block;
+  pointer-events: none;
+}
 </style>
 </head>
 <body>
