@@ -161,15 +161,7 @@
     min-width: 0;
   }
   .bottom-menu a::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #4B0082 0%, #8b5cf6 100%);
-    border-radius: 2px;
-    transition: width 0.35s cubic-bezier(.4,1.7,.7,1), left 0.35s cubic-bezier(.4,1.7,.7,1);
+  display: none;
   }
   .bottom-menu a:hover {
   color: #4B0082;
@@ -178,8 +170,7 @@
   border-radius: 12px;
   }
   .bottom-menu a:hover::after {
-    width: 80%;
-    left: 10%;
+  /* plus de barre animée */
   }
   @media (max-width: 600px) {
     .bottom-menu {
