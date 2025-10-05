@@ -127,7 +127,8 @@
 
   .hidden { display: none; }
 </style>
-  /* Menu bas de page */
+
+  /* Menu bas de page (fixe, propre, couleur #8b8b8b) */
   .bottom-menu {
     position: fixed;
     left: 0;
@@ -140,6 +141,9 @@
     height: 60px;
     z-index: 100;
     box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    overflow: hidden;
   }
   .bottom-menu a {
     flex: 1;
@@ -152,6 +156,8 @@
     position: relative;
     transition: color 0.2s;
     overflow: hidden;
+    background: none;
+    border: none;
   }
   .bottom-menu a::after {
     content: "";
@@ -174,6 +180,8 @@
   @media (max-width: 600px) {
     .bottom-menu {
       height: 48px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
     }
     .bottom-menu a {
       font-size: 1em;
