@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shop Nemrod</title>
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    color: #4B0082;
+    text-align: center;
+  }
+
+  h1 {
+    padding: 20px;
+  }
+
+  .product, .product-detail {
+    border: 2px solid #4B0082;
+    border-radius: 20px;
+    margin: 15px auto;
+    padding: 15px;
+    max-width: 350px;
+    box-shadow: 0px 0px 10px rgba(75,0,130,0.1);
+  }
+
+  .product img, .product-detail img {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .btn-details, .btn-order {
+    margin-top: 10px;
+    border-radius: 50px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-details {
+    background-color: #4B0082;
+    color: white;
+  }
+
+  .btn-order {
+    background-color: #4B0082;
+    color: white;
+    font-size: 1.2em;
+    width: 80%;
+  }
+
+  .price-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+  }
+
+  .price {
+    background-color: #4B0082;
+    color: white;
+    font-weight: bold;
+    border-radius: 50px;
+    padding: 10px 15px;
+    border: 2px solid white;
+  }
+
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+
+<h1>🛍️ Shop Nemrod</h1>
+
+<div id="shop"></div>
+<div id="product-detail" class="hidden"></div>
+
+<script>
+const products = [
+  { name: "Produit 1", img: "https://via.placeholder.com/300x200", desc: "Description du produit 1", prices: ["15€", "20€", "25€"] },
+  { name: "Produit 2", img: "https://via.placeholder.com/300x200", desc: "Description du produit 2", prices: ["10€", "15€", "20€"] },
+  { name: "Produit 3", img: "https://via.placeholder.com/300x200", desc: "Description du produit 3", prices: ["12€", "18€", "24€"] },
+  { name: "Produit 4", img: "https://via.placeholder.com/300x200", desc: "Description du produit 4", prices: ["20€", "25€", "30€"] },
+  { name: "Produit 5", img: "https://via.placeholder.com/300x200", desc: "Description du produit 5", prices: ["30€", "35€", "40€"] },
+];
+
+const shopDiv = document.getElementById("shop");
+const detailDiv = document.getElementById("product-detail");
+
+// Affiche la liste des produits
+function renderShop() {
+  shopDiv.innerHTML = "";
+  detailDiv.classList.add("hidden");
+  shopDiv.classList.remove("hidden");
+
+  products.forEach((p, index) => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+      <h2>${p.name}</h2>
+      <img src="${p.img}" alt="${p.name}">
+      <button class="btn-details" onclick="showDetail(${index})">Détails</button>
+    `;
+    shopDiv.appendChild(div);
+  });
+}
+
+// Affiche la page détails d’un produit
+function showDetail(index) {
+  const p = products[index];
+  shopDiv.classList.add("hidden");
+  detailDiv.classList.remove("hidden");
+  detailDiv.innerHTML = `
+    <div class="product-detail">
+      <h2>${p.name}</h2>
+      <img src="${p.img}" alt="${p.name}">
+      <p>${p.desc}</p>
+      <div class="price-container">
+        ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
+      </div>
+      <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
+    </div>
+  `;
+}
+
+// Bouton commander → ouvre Telegram DM
+function orderProduct() {
+  window.open("https://t.me/ia00100", "_blank");
+}
+
+// Initialisation
+renderShop();
+</script>
+
+</body>
+</html>
