@@ -47,18 +47,19 @@
   box-shadow: 0 2px 10px rgba(0,0,0,0.10);
   }
   .topbar-logo {
-    height: 54px;
-    width: 54px;
-  margin-right: 10px;
+  height: 54px;
+  width: 54px;
+  margin-right: 14px;
   margin-left: 18px;
-    object-fit: contain;
-  position: absolute;
-  left: 50%;
-  bottom: -24px; /* 50% hors de la carte (bouton fait 48px) */
-  transform: translateX(-50%);
-  margin: 0;
+  object-fit: contain;
+  /* suppression du position: absolute et des styles de centrage vertical */
+  position: static;
+  left: unset;
+  bottom: unset;
+  transform: none;
+  margin: 0 14px 0 18px;
   z-index: 20;
-  }
+}
   body {
   /* plus de padding car la barre n'est plus fixe */
   }
