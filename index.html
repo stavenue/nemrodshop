@@ -43,7 +43,7 @@
   align-self: center;
   left: auto;
   right: auto;
-  bottom: 18px; /* descend la croix plus bas dans la carte */
+    bottom: 0px; /* la croix touche le bas de la carte */
   top: auto;
   margin-top: auto;
   transform: none;
@@ -88,16 +88,15 @@
   margin-right: 10px;
   margin-left: 18px;
     object-fit: contain;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  }
-  .topbar-title {
-    color: #fff;
-    font-size: 2.1em;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-  text-align: left;
+  position: absolute;
+  left: 50%;
+  bottom: -24px; /* 50% hors de la carte (bouton fait 48px) */
+  transform: translateX(-50%);
+  margin: 0;
+  z-index: 20;
+  align-self: auto;
+  top: auto;
+  margin-top: 0;
   margin: 0;
   }
   body {
@@ -393,7 +392,7 @@ function showDetail(index) {
         ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
-      <button class="close-overlay" onclick="closeOverlay()">&#10006;</button>
+  <button class="close-overlay" style="pointer-events:auto;" onclick="closeOverlay()">&#10006;</button>
     </div>
   `;
   // Supprime la croix hors overlay si elle existe
