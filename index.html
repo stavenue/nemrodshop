@@ -32,12 +32,13 @@
   position: relative;
   z-index: 2;
   min-height: 340px;
-  padding-bottom: 32px;
+  padding-bottom: 64px;
+  position: relative;
   }
   .close-overlay {
-  position: fixed;
+  position: absolute;
   left: 50%;
-  bottom: 32px;
+  bottom: 16px;
   transform: translateX(-50%);
   background: #232323;
   color: #fff;
@@ -382,19 +383,12 @@ function showDetail(index) {
         ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
+      <button class="close-overlay" onclick="closeOverlay()">&#10006;</button>
     </div>
   `;
-  // Ajoute la croix en dehors de l'overlay
-  if (!document.getElementById('close-overlay-btn')) {
-    const closeBtn = document.createElement('button');
-    closeBtn.className = 'close-overlay';
-    closeBtn.id = 'close-overlay-btn';
-    closeBtn.innerHTML = '&#10006;';
-    closeBtn.onclick = closeOverlay;
-    document.body.appendChild(closeBtn);
-  } else {
-    document.getElementById('close-overlay-btn').style.display = 'flex';
-  }
+  // Supprime la croix hors overlay si elle existe
+  const closeBtn = document.getElementById('close-overlay-btn');
+  if (closeBtn) closeBtn.remove();
 }
 
 // Fermer l'overlay et revenir au menu
