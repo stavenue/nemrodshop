@@ -126,6 +126,69 @@
   }
 
   .hidden { display: none; }
+
+  /* Menu bas de page (fixe, discret, toujours visible) */
+  .bottom-menu {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    background: #8b8b8b;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 42px;
+    z-index: 100;
+    box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    overflow: hidden;
+    padding: 0;
+  }
+  .bottom-menu a {
+    flex: 1;
+    text-align: center;
+    color: #232323;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 600;
+    padding: 8px 0 4px 0;
+    position: relative;
+    transition: color 0.2s;
+    overflow: hidden;
+    background: none;
+    border: none;
+    min-width: 0;
+  }
+  .bottom-menu a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #4B0082 0%, #8b5cf6 100%);
+    border-radius: 2px;
+    transition: width 0.35s cubic-bezier(.4,1.7,.7,1), left 0.35s cubic-bezier(.4,1.7,.7,1);
+  }
+  .bottom-menu a:hover {
+    color: #4B0082;
+  }
+  .bottom-menu a:hover::after {
+    width: 80%;
+    left: 10%;
+  }
+  @media (max-width: 600px) {
+    .bottom-menu {
+      height: 36px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    .bottom-menu a {
+      font-size: 0.95em;
+      padding: 6px 0 2px 0;
+    }
+  }
 </style>
 </head>
 <body>
