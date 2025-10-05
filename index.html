@@ -14,11 +14,12 @@
     height: 100vh;
     background: rgba(44,44,44,0.96);
     z-index: 500;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  transition: opacity 0.2s;
+  overflow-y: auto;
   }
   .overlay-detail .product-detail {
     background: #232323;
@@ -30,12 +31,17 @@
   position: relative;
   z-index: 2;
   min-height: 340px;
-  padding-bottom: 38px;
+  padding-bottom: 70px;
+  width: 100%;
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 16px 16px 0 0;
+  margin-bottom: 10px;
   }
   .close-overlay {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  bottom: 8px;
+  bottom: 24px;
   transform: translateX(-50%);
     background: #4B0082;
     color: #fff;
@@ -362,12 +368,13 @@ function showDetail(index) {
       <h2>${p.name}</h2>
       <img src="${p.img}" alt="${p.name}">
       <p>${p.desc}</p>
+      <div style="color:#fff;font-weight:600;font-size:1.1em;margin:18px 0 6px 0;text-align:center;letter-spacing:0.08em;">NOS PRIX</div>
       <div class="price-container">
         ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
-      <button class="close-overlay" onclick="closeOverlay()">&#10006;</button>
     </div>
+    <button class="close-overlay" onclick="closeOverlay()">&#10006;</button>
   `;
 }
 
