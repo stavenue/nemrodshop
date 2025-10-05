@@ -38,34 +38,44 @@
   max-height: 80vh;
   overflow-y: auto;
   }
-  .close-overlay {
+  /* Remplacement du bouton croix par une version SVG épurée */
+.close-overlay {
   position: absolute;
   left: 50%;
-  bottom: -24px; /* 50% hors de la carte (bouton fait 48px) */
+  bottom: -24px;
   transform: translateX(-50%);
   margin: 0;
   z-index: 20;
   background: #232323;
-  color: #fff;
-  border: 2px solid #fff;
+  border: none;
   border-radius: 50%;
   width: 48px;
   height: 48px;
-  font-size: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.10);
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border 0.18s; /* retire le transform du hover */
-  z-index: 9999;
-  }
-  .close-overlay:hover {
+  transition: background 0.18s, box-shadow 0.18s;
+  outline: none;
+}
+.close-overlay:hover, .close-overlay:focus {
   background: #fff;
-  color: #4B0082;
-  border: 2px solid #4B0082;
-  /* plus de déplacement ni scale au hover */
-  }
+  box-shadow: 0 4px 16px rgba(75,0,130,0.18);
+}
+.close-overlay svg {
+  width: 28px;
+  height: 28px;
+  stroke: #fff;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  transition: stroke 0.18s;
+}
+.close-overlay:hover svg, .close-overlay:focus svg {
+  stroke: #4B0082;
+}
   /* Barre du haut avec logo et titre */
   .topbar {
     width: 100vw;
@@ -385,7 +395,9 @@ function showDetail(index) {
         ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
-  <button class="close-overlay" style="pointer-events:auto;" onclick="closeOverlay()">&#10006;</button>
+  <button class="close-overlay" aria-label="Fermer" onclick="closeOverlay()">
+  <svg viewBox="0 0 24 24"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
+</button>
     </div>
   `;
   // Supprime la croix hors overlay si elle existe
