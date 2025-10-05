@@ -10,9 +10,9 @@
     width: 100vw;
     height: 80px;
     background: #4B0082;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   z-index: 200;
   box-shadow: 0 2px 10px rgba(0,0,0,0.10);
@@ -32,9 +32,8 @@
     font-size: 2.1em;
     font-weight: 700;
     letter-spacing: 0.12em;
-    flex: 1;
-    text-align: center;
-  margin-right: 0;
+  text-align: left;
+  margin: 0;
   }
   body {
   /* plus de padding car la barre n'est plus fixe */
@@ -231,8 +230,10 @@
 <body>
 
   <div class="topbar">
-    <img src="logo.png" alt="Logo" class="topbar-logo">
-    <div class="topbar-title">NEMROD</div>
+    <div style="display: flex; align-items: center; justify-content: center;">
+      <img src="logo.png" alt="Logo" class="topbar-logo">
+      <div class="topbar-title">NEMROD</div>
+    </div>
   </div>
 <div class="products-grid" id="shop"></div>
 <div id="product-detail" class="hidden"></div>
