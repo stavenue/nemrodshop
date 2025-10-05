@@ -17,32 +17,27 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   transition: opacity 0.2s;
   overflow-y: auto;
   }
   .overlay-detail .product-detail {
   background: #232323;
-  max-width: 290px;
-  width: 100%;
+  max-width: 320px;
+  width: 96vw;
   margin: 0 auto;
   border-radius: 18px;
   box-shadow: none;
   border: 2px solid #fff;
   position: relative;
   z-index: 2;
-  min-height: 420px;
-  padding-bottom: 70px;
-  width: 100%;
-  max-height: 120px;
-  object-fit: cover;
-  border-radius: 14px 14px 0 0;
-  margin-bottom: 10px;
+  min-height: 340px;
+  padding-bottom: 32px;
   }
   .close-overlay {
   position: fixed;
   left: 50%;
-  bottom: 24px;
+  bottom: 32px;
   transform: translateX(-50%);
   background: #232323;
   color: #fff;
@@ -54,10 +49,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: none;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
   cursor: pointer;
   transition: background 0.18s, color 0.18s, border 0.18s, transform 0.18s;
-  z-index: 10;
+  z-index: 9999;
   }
   .close-overlay:hover {
   background: #fff;
@@ -388,14 +383,27 @@ function showDetail(index) {
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
     </div>
-    <button class="close-overlay" onclick="closeOverlay()">&#10006;</button>
   `;
+  // Ajoute la croix en dehors de l'overlay
+  if (!document.getElementById('close-overlay-btn')) {
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'close-overlay';
+    closeBtn.id = 'close-overlay-btn';
+    closeBtn.innerHTML = '&#10006;';
+    closeBtn.onclick = closeOverlay;
+    document.body.appendChild(closeBtn);
+  } else {
+    document.getElementById('close-overlay-btn').style.display = 'flex';
+  }
 }
 
 // Fermer l'overlay et revenir au menu
 function closeOverlay() {
   overlayDiv.classList.add("hidden");
   shopDiv.classList.remove("hidden");
+  // Cache la croix
+  const closeBtn = document.getElementById('close-overlay-btn');
+  if (closeBtn) closeBtn.style.display = 'none';
 }
 
 // Bouton commander → ouvre Telegram DM
