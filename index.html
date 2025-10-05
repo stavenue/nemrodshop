@@ -43,7 +43,7 @@
   align-self: center;
   left: auto;
   right: auto;
-  bottom: 0;
+  bottom: 18px; /* descend la croix plus bas dans la carte */
   top: auto;
   margin-top: auto;
   transform: none;
@@ -61,14 +61,14 @@
   justify-content: center;
   box-shadow: 0 2px 10px rgba(0,0,0,0.10);
   cursor: pointer;
-  transition: background 0.18s, color 0.18s, border 0.18s, transform 0.18s;
+  transition: background 0.18s, color 0.18s, border 0.18s; /* retire le transform du hover */
   z-index: 9999;
   }
   .close-overlay:hover {
   background: #fff;
   color: #4B0082;
   border: 2px solid #4B0082;
-  transform: translateX(-50%) scale(1.08);
+  /* plus de déplacement ni scale au hover */
   }
   /* Barre du haut avec logo et titre */
   .topbar {
