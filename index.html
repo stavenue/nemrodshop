@@ -378,24 +378,27 @@
   .close-overlay {
     position: absolute;
     left: 50%;
-    bottom: 12px;
+    bottom: -19px;
     transform: translateX(-50%);
     width: 38px;
     height: 38px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: none;
-    border: none;
+    background: #232323;
+    border: 2.5px solid #b4b4b4;
+    border-radius: 50%;
+    box-shadow: 0 2px 12px 0 rgba(75,0,130,0.10);
     cursor: pointer;
-    z-index: 20;
-    font-size: 2em;
+    z-index: 30;
+    font-size: 1.6em;
     color: #b4b4b4;
-    transition: color 0.18s, transform 0.18s;
+    transition: color 0.18s, border-color 0.18s, transform 0.18s;
   }
   .close-overlay:hover {
     color: #7c3aed;
-    transform: scale(1.18) rotate(-18deg);
+    border-color: #7c3aed;
+    transform: translateX(-50%) scale(1.13) rotate(-16deg);
   }
 
   .hidden { display: none; }
