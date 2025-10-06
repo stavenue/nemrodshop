@@ -36,7 +36,7 @@
 .close-circle {
   position: absolute;
   left: 50%;
-  top: -32px; /* 50% du cercle (64px) au-dessus de la fiche */
+  bottom: -32px; /* 50% du cercle (64px) sous la fiche */
   transform: translateX(-50%);
   width: 64px;
   height: 64px;
@@ -703,7 +703,6 @@ function showDetail(index) {
   overlayDiv.classList.remove("hidden");
   overlayDiv.innerHTML = `
     <div class="product-detail">
-      <div class="close-circle" onclick="closeOverlay()"><span class="close-icon">&times;</span></div>
       <div class="product-detail-scroll">
         <div class="product-detail-video">Vidéo à venir</div>
         <h2 class="product-detail-title">${p.name}</h2>
@@ -714,6 +713,7 @@ function showDetail(index) {
         </div>
         <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
       </div>
+      <div class="close-circle" onclick="closeOverlay()"><span class="close-icon">&times;</span></div>
     </div>
   `;
 }
