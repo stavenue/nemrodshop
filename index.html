@@ -489,7 +489,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 }
 .custom-dropdown {
     position: relative;
-    min-width: 230px;
+    min-width: 170px;
     background: #7c3aed;
     border: 2px solid #a084ca;
     border-radius: 999px;
@@ -509,17 +509,10 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     flex: 1;
     text-align: center;
     z-index: 2;
-  }
-  .custom-dropdown-arrow {
-    position: absolute;
-    left: 16px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1em;
-    color: #fff;
-    opacity: 0.85;
-    z-index: 3;
-    pointer-events: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
   }
   .custom-dropdown-list {
     display: none;
