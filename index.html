@@ -741,22 +741,6 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 </div>
 
 <script>
-// TEST : Vérifie le clic sur le bouton Info
-document.getElementById('btnInfo').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.getElementById('shop').classList.add('hidden');
-  document.getElementById('overlay-detail').classList.add('hidden');
-  document.getElementById('infoPage').classList.remove('hidden');
-  document.querySelector('.filter-bar').classList.add('hidden');
-});
-document.getElementById('btnMenu').addEventListener('click', function(e) {
-  e.preventDefault();
-  document.getElementById('infoPage').classList.add('hidden');
-  document.getElementById('overlay-detail').classList.add('hidden');
-  document.getElementById('shop').classList.remove('hidden');
-  document.querySelector('.filter-bar').classList.remove('hidden');
-  renderShop();
-});
 const products = [
   { name: "Euphon", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 150€", "5 flacons = 250€"] },
   { name: "Xanax 0.50mg", img: "images/alprazolam50.png", desc: "L'Alprazolam aide pour l'anxiété et à mieux dormir.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
