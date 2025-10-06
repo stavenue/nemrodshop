@@ -756,6 +756,7 @@ document.getElementById('btnMenu').addEventListener('click', function(e) {
   document.getElementById('overlay-detail').style.display = 'none';
   document.getElementById('shop').style.display = 'grid';
   document.querySelector('.filter-bar').style.display = 'flex';
+  renderShop();
 });
 const products = [
   { name: "Euphon", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 150€", "5 flacons = 250€"] },
