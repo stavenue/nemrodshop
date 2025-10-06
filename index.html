@@ -663,8 +663,9 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   min-height: calc(100vh - 100px);
   background: #2c2c2c;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 50;
   top: 0;
   left: 0;
@@ -684,16 +685,21 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 }
 .info-title {
   color: #7c3aed;
-  font-size: 1.35em;
+  font-size: 2em;
   font-weight: 700;
-  margin-bottom: 18px;
+  margin-top: 32px;
+  margin-bottom: 32px;
   text-align: center;
+  width: 100%;
 }
 .info-content {
   color: #fff;
-  font-size: 1em;
-  text-align: left;
-  line-height: 1.6;
+  font-size: 1.15em;
+  text-align: center;
+  line-height: 1.7;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .info-content a {
   color: #7c3aed;
