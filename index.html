@@ -538,9 +538,10 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   }
   .custom-dropdown-option {
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 0 10px 0;
     text-align: center;
     width: 100%;
+    box-sizing: border-box;
     cursor: pointer;
     font-size: 0.98em;
     font-weight: 600;
@@ -548,7 +549,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-sizing: border-box;
+    margin: 0 auto;
   }
   .custom-dropdown-option:hover, .custom-dropdown-option.selected {
     background: #a084ca;
