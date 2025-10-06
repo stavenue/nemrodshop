@@ -487,17 +487,72 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     text-align-last: center;
   }
 }
-.filter-dropdown-arrow {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 1.1em;
-  color: #fff;
-  opacity: 0.85;
-  z-index: 2;
-}
+.custom-dropdown {
+    position: relative;
+    min-width: 230px;
+    background: #7c3aed;
+    border: 2px solid #a084ca;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(75,0,130,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    font-size: 0.98em;
+    font-weight: 600;
+    color: #fff;
+    user-select: none;
+    padding: 0 18px 0 38px;
+  }
+  .custom-dropdown-selected {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+  }
+  .custom-dropdown-arrow {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    color: #fff;
+    opacity: 0.85;
+    z-index: 3;
+    pointer-events: none;
+  }
+  .custom-dropdown-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    width: 100%;
+    background: #7c3aed;
+    border: 2px solid #a084ca;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(75,0,130,0.13);
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 0;
+  }
+  .custom-dropdown.open .custom-dropdown-list {
+    display: flex;
+  }
+  .custom-dropdown-option {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    cursor: pointer;
+    font-size: 0.98em;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+  }
+  .custom-dropdown-option:hover, .custom-dropdown-option.selected {
+    background: #a084ca;
+    color: #fff;
+  }
 </style>
 </head>
 <body>
@@ -510,13 +565,16 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   </div>
   <div class="filter-bar">
     <div class="filter-dropdown-wrapper">
-      <span class="filter-dropdown-arrow">▼</span>
-      <select class="filter-dropdown" id="categoryFilter">
-        <option value="all">Toutes les catégories</option>
-        <option value="benzo">Benzodiazépines</option>
-        <option value="opioide">Opioïdes</option>
-        <option value="opiacé">Opiacés</option>
-      </select>
+      <div class="custom-dropdown" id="customDropdown">
+        <span class="custom-dropdown-selected" id="customDropdownSelected">Toutes les catégories</span>
+        <span class="custom-dropdown-arrow">▼</span>
+        <div class="custom-dropdown-list" id="customDropdownList">
+          <div class="custom-dropdown-option selected" data-value="all">Toutes les catégories</div>
+          <div class="custom-dropdown-option" data-value="benzo">Benzodiazépines</div>
+          <div class="custom-dropdown-option" data-value="opioide">Opioïdes</div>
+          <div class="custom-dropdown-option" data-value="opiacé">Opiacés</div>
+        </div>
+      </div>
     </div>
     <div class="filter-bar-sep"></div>
   </div>
