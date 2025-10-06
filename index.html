@@ -40,15 +40,15 @@
   transform: translateX(-50%);
   width: 64px;
   height: 64px;
-  background: #e0e0e0;
+  background: transparent;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+  box-shadow: none;
   cursor: pointer;
   z-index: 9999;
-  transition: background 0.2s, box-shadow 0.2s;
+  transition: border-color 0.2s;
   border: 2px solid #fff;
 }
 .close-icon {
@@ -61,8 +61,7 @@
   transform: translateY(-4px) scale(1.12);
 }
 .close-circle:hover {
-  background: #ede9fe;
-  box-shadow: 0 4px 16px rgba(124,58,237,0.10);
+  border-color: #7c3aed;
 }
   /* Barre du haut avec logo et titre */
   .topbar {
