@@ -820,10 +820,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   btnInfo.addEventListener("click", function(e) {
     e.preventDefault();
-    shopDiv.classList.add('hidden');
-    overlayDiv.classList.add('hidden');
-    infoPage.classList.remove('hidden');
-    filterBar.classList.add('hidden');
+  shopDiv.classList.add('hidden');
+  overlayDiv.classList.add('hidden');
+  infoPage.classList.remove('hidden');
+  filterBar.classList.add('hidden');
+  // On masque aussi la grille des produits et la barre de filtre pour n'afficher que le texte info
   });
 
   btnMenu.addEventListener("click", function(e) {
