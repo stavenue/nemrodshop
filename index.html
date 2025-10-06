@@ -532,6 +532,8 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     padding: 6px 0;
     min-width: 170px;
     width: 210px;
+    left: 0;
+    margin-top: 2px;
   }
   .custom-dropdown.open .custom-dropdown-list {
     display: flex;
@@ -650,6 +652,27 @@ function orderProduct() {
 renderShop();
 </script>
 <script>
+function filterProducts(category) {
+  let filtered = products;
+  if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem'));
+  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('euphon'));
+  else if (category === 'opiacé') filtered = products.filter(p => p.name.toLowerCase().includes('opiac'));
+  // 'all' affiche tout
+  shopDiv.innerHTML = "";
+  filtered.forEach((p, index) => {
+    const div = document.createElement("div");
+    div.className = "product";
+    div.innerHTML = `
+      <div class="product-img-zone"><img src="${p.img}" alt="${p.name}"></div>
+      <div class="product-info-zone">
+        <h2>${p.name}</h2>
+        <button class="btn-details" onclick="showDetail(${products.indexOf(p)})">Voir détails</button>
+      </div>
+    `;
+    shopDiv.appendChild(div);
+  });
+}
+
 document.addEventListener('DOMContentLoaded', function() {
   const dropdown = document.getElementById('customDropdown');
   const selected = document.getElementById('customDropdownSelected');
@@ -668,8 +691,7 @@ document.addEventListener('DOMContentLoaded', function() {
       selected.textContent = option.textContent;
       currentValue = option.getAttribute('data-value');
       dropdown.classList.remove('open');
-      // Si tu veux filtrer les produits, déclenche ici
-      // filterProducts(currentValue);
+      filterProducts(currentValue);
     });
   });
 
