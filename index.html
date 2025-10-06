@@ -649,57 +649,53 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     background: #a084ca;
     color: #fff;
   }
-
-  /* Overlay info */
-.overlay-info {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(44,44,44,0.70);
-  z-index: 600;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.2s;
-  overflow: hidden;
-}
+</style>
+<style>
+/* Style page info */
 .info-page {
+  position: relative;
   width: 100vw;
-  min-height: 100vh;
-  background: #232323;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 600;
+  min-height: calc(100vh - 100px);
+  background: #2c2c2c;
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 50;
+  top: 0;
+  left: 0;
 }
 .info-card {
-  width: 325px;
-  min-height: 320px;
-  max-width: 90vw;
   background: #232323;
   border-radius: 32px;
   box-shadow: 0 6px 32px 0 rgba(75,0,130,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.08);
   border: 1.5px solid #fff;
-  position: relative;
+  max-width: 340px;
+  width: 90vw;
+  margin: 32px auto;
+  padding: 32px 18px 32px 18px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 32px 18px 38px 18px;
-  color: #fff;
-  font-size: 1.08em;
-  text-align: center;
 }
 .info-title {
   color: #7c3aed;
-  font-size: 1.25em;
+  font-size: 1.35em;
   font-weight: 700;
   margin-bottom: 18px;
-  letter-spacing: 0.04em;
+  text-align: center;
+}
+.info-content {
+  color: #fff;
+  font-size: 1em;
+  text-align: left;
+  line-height: 1.6;
+}
+.info-content a {
+  color: #7c3aed;
+  text-decoration: underline;
+}
+.info-page.hidden {
+  display: none;
 }
 </style>
 </head>
@@ -728,14 +724,13 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   </div>
 <div class="products-grid" id="shop"></div>
 <div id="overlay-detail" class="overlay-detail hidden"></div>
-<div id="info-page" class="info-page hidden">
+<div class="info-page hidden" id="infoPage">
   <div class="info-card">
-    <div class="info-title">Informations</div>
+    <h2 class="info-title">À propos du shop Nemrod</h2>
     <div class="info-content">
-      Bienvenue sur Nemrod Shop !<br><br>
-      Ici, vous trouverez toutes les informations utiles sur le fonctionnement du mini-app, la sécurité, les commandes et le support.<br><br>
-      Pour toute question, contactez-nous via le canal Telegram.<br><br>
-      Merci de votre confiance !
+      <p><b>Qui sommes-nous ?</b><br>Nemrod est un shop spécialisé dans la vente de produits pharmaceutiques. Nous proposons des produits de qualité, livrés rapidement et discrètement.</p>
+      <p><b>Comment commander ?</b><br>Pour commander, cliquez sur le bouton "Commander" d'un produit ou contactez-nous sur Telegram via le canal en bas.</p>
+      <p><b>Contact</b><br>Pour toute question, contactez-nous sur Telegram : <a href="https://t.me/ia00100" target="_blank">@ia00100</a></p>
     </div>
   </div>
 </div>
@@ -809,6 +804,26 @@ function orderProduct() {
 renderShop();
 </script>
 <script>
+// Gestion affichage page info/menu
+const infoPage = document.getElementById("infoPage");
+const btnMenu = document.getElementById("btnMenu");
+const btnInfo = document.getElementById("btnInfo");
+
+btnInfo.addEventListener("click", function(e) {
+  e.preventDefault();
+  document.getElementById("shop").classList.add("hidden");
+  document.getElementById("overlay-detail").classList.add("hidden");
+  infoPage.classList.remove("hidden");
+});
+
+btnMenu.addEventListener("click", function(e) {
+  e.preventDefault();
+  infoPage.classList.add("hidden");
+  document.getElementById("overlay-detail").classList.add("hidden");
+  document.getElementById("shop").classList.remove("hidden");
+});
+</script>
+<script>
 function filterProducts(category) {
   let filtered = products;
   if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem'));
@@ -859,29 +874,11 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 </script>
-<script>
-function openInfoPage() {
-  document.getElementById('shop').classList.add('hidden');
-  document.getElementById('info-page').classList.remove('hidden');
-}
-function closeInfoPage() {
-  document.getElementById('info-page').classList.add('hidden');
-  document.getElementById('shop').classList.remove('hidden');
-}
-document.querySelector('.bottom-menu a[href="info.html"]').addEventListener('click', function(e) {
-  e.preventDefault();
-  openInfoPage();
-});
-document.querySelector('.bottom-menu a[href="index.html"]').addEventListener('click', function(e) {
-  e.preventDefault();
-  closeInfoPage();
-});
-</script>
 <!-- Place la ligne fine DANS la barre du bas -->
 <nav class="bottom-menu">
   <div class="bottom-menu-sep"></div>
-  <a href="index.html"><span style="font-family: 'Segoe UI Symbol', 'Arial', sans-serif;">🏠</span>Menu</a>
-  <a href="info.html"><span style="font-family: 'Segoe UI Symbol', 'Arial', sans-serif;">ℹ</span>Info</a>
+  <a href="#" id="btnMenu"><span style="font-family: 'Segoe UI Symbol', 'Arial', sans-serif;">🏠</span>Menu</a>
+  <a href="#" id="btnInfo"><span style="font-family: 'Segoe UI Symbol', 'Arial', sans-serif;">ℹ</span>Info</a>
   <a href="https://t.me/ia00100" target="_blank"><span style="font-family: 'Segoe UI Symbol', 'Arial', sans-serif;">🔗</span>Canal</a>
 </nav>
 </body>
