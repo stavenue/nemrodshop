@@ -665,6 +665,18 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   transition: opacity 0.2s;
   overflow: hidden;
 }
+.info-page {
+  width: 100vw;
+  min-height: 100vh;
+  background: #232323;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .info-card {
   width: 325px;
   min-height: 320px;
@@ -688,35 +700,6 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   font-weight: 700;
   margin-bottom: 18px;
   letter-spacing: 0.04em;
-}
-.info-close {
-  position: absolute;
-  left: 50%;
-  bottom: -24px;
-  transform: translateX(-50%);
-  width: 48px;
-  height: 48px;
-  background: #4d4d4d;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: none;
-  cursor: pointer;
-  z-index: 10;
-  transition: background 0.18s, border-color 0.18s;
-  border: 2px solid #fff;
-}
-.info-close-icon {
-  color: #888;
-  font-size: 2.1em;
-  transition: color 0.18s;
-}
-.info-close:hover {
-  background: #7c3aed;
-}
-.info-close:hover .info-close-icon {
-  color: #fff;
 }
 </style>
 </head>
@@ -745,7 +728,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   </div>
 <div class="products-grid" id="shop"></div>
 <div id="overlay-detail" class="overlay-detail hidden"></div>
-<div id="overlay-info" class="overlay-info hidden">
+<div id="info-page" class="info-page hidden">
   <div class="info-card">
     <div class="info-title">Informations</div>
     <div class="info-content">
@@ -754,7 +737,6 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
       Pour toute question, contactez-nous via le canal Telegram.<br><br>
       Merci de votre confiance !
     </div>
-    <div class="info-close" onclick="closeInfoOverlay()"><span class="info-close-icon">&times;</span></div>
   </div>
 </div>
 
@@ -878,15 +860,21 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script>
-function openInfoOverlay() {
-  document.getElementById('overlay-info').classList.remove('hidden');
+function openInfoPage() {
+  document.getElementById('shop').classList.add('hidden');
+  document.getElementById('info-page').classList.remove('hidden');
 }
-function closeInfoOverlay() {
-  document.getElementById('overlay-info').classList.add('hidden');
+function closeInfoPage() {
+  document.getElementById('info-page').classList.add('hidden');
+  document.getElementById('shop').classList.remove('hidden');
 }
 document.querySelector('.bottom-menu a[href="info.html"]').addEventListener('click', function(e) {
   e.preventDefault();
-  openInfoOverlay();
+  openInfoPage();
+});
+document.querySelector('.bottom-menu a[href="index.html"]').addEventListener('click', function(e) {
+  e.preventDefault();
+  closeInfoPage();
 });
 </script>
 <!-- Place la ligne fine DANS la barre du bas -->
