@@ -813,18 +813,18 @@ const filterBar = document.querySelector('.filter-bar');
 
 btnInfo.addEventListener("click", function(e) {
   e.preventDefault();
-  shopDiv.style.display = "none";
-  overlayDiv.style.display = "none";
-  infoPage.style.display = "flex";
-  filterBar.style.display = "none";
+  shopDiv.classList.add('hidden');
+  overlayDiv.classList.add('hidden');
+  infoPage.classList.remove('hidden');
+  filterBar.classList.add('hidden');
 });
 
 btnMenu.addEventListener("click", function(e) {
   e.preventDefault();
-  infoPage.style.display = "none";
-  overlayDiv.style.display = "none";
-  shopDiv.style.display = "grid";
-  filterBar.style.display = "flex";
+  infoPage.classList.add('hidden');
+  overlayDiv.classList.add('hidden');
+  shopDiv.classList.remove('hidden');
+  filterBar.classList.remove('hidden');
 });
 </script>
 <script>
