@@ -595,6 +595,350 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
     background: #a084ca;
     color: #fff;
   }
+  .product-detail-page {
+    width: 100%;
+    max-width: 540px;
+    min-width: 320px;
+    background: #232323;
+    border-radius: 32px;
+    box-shadow: 0 6px 32px 0 rgba(75,0,130,0.10), 0 1.5px 8px 0 rgba(0,0,0,0.08);
+    padding: 0 0 32px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin: 32px auto;
+  }
+  .product-detail-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  .product-detail-img {
+    width: 60%;
+    max-width: 220px;
+    border-radius: 18px;
+    margin: 0 auto 12px auto;
+    box-shadow: 0 2px 12px 0 rgba(75,0,130,0.10);
+    object-fit: cover;
+    display: block;
+  }
+  .product-detail-title {
+    text-align: center;
+    color: #7c3aed;
+    font-size: 1.35em;
+    font-weight: 700;
+    margin: 10px 0 8px 0;
+    letter-spacing: 0.04em;
+  }
+  .product-detail-desc {
+    color: #fff;
+    font-size: 1.08em;
+    margin: 8px 0 18px 0;
+    text-align: center;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+  .product-detail-prices {
+    width: 100%;
+    margin: 0 0 18px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .product-detail-prices-label {
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    margin: 18px 0 6px 0;
+    text-align: center;
+    letter-spacing: 0.08em;
+  }
+  .price-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 0;
+    align-items: center;
+  }
+  .price {
+    background: linear-gradient(90deg,#4B0082 60%,#7c3aed 100%);
+    color: #fff;
+    border-radius: 999px;
+    padding: 6px 18px;
+    font-size: 0.98em;
+    font-weight: 600;
+    margin: 0;
+    box-shadow: 0 2px 8px 0 rgba(75,0,130,0.08);
+    min-width: 70px;
+    text-align: center;
+    border: 1.5px solid #fff;
+    letter-spacing: 0.03em;
+    transition: background 0.18s, color 0.18s;
+  }
+  .btn-order {
+    background: linear-gradient(90deg,#4B0082 60%,#7c3aed 100%);
+    color: #fff;
+    font-size: 1.13em;
+    font-weight: 600;
+    border-radius: 32px;
+    border: none;
+    width: 90%;
+    margin: 24px auto 0 auto;
+    padding: 12px 0;
+    box-shadow: 0 2px 10px rgba(75,0,130,0.10);
+    transition: background 0.18s, box-shadow 0.18s;
+  }
+  .btn-order:hover {
+    background: #fff;
+    color: #4B0082;
+    box-shadow: 0 4px 16px rgba(75,0,130,0.18);
+  }
+  @media (max-width: 600px) {
+    .product-detail-page {
+      max-width: 98vw;
+      width: 98vw;
+      min-width: unset;
+      margin: 8px auto;
+      padding: 0 0 18px 0;
+      border-radius: 18px;
+    }
+    .product-detail-img {
+      width: 90%;
+      max-width: 180px;
+    }
+    .product-detail-video {
+      height: 120px;
+      font-size: 1em;
+    }
+  }
+  /* Menu bas de page (fixe, discret, toujours visible) */
+  .bottom-menu {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  background: #4d4d4d !important;
+  height: 100px !important;
+  min-height: 100px !important;
+  max-height: 100px !important;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  overflow: hidden;
+  padding: 0;
+}
+.bottom-menu-sep {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 2px;
+  background: #b4b4b4 !important;
+  margin: 0;
+  padding: 0;
+  border: none;
+  z-index: 101;
+  display: block;
+  pointer-events: none;
+}
+.bottom-menu a {
+  flex: 1;
+  text-align: center;
+  color: #8f8f8f !important;
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  padding: 0;
+  position: relative;
+  transition: color 0.2s, box-shadow 0.22s, transform 0.18s, background 0.18s;
+}
+.bottom-menu a span {
+  font-size: 1.25em;
+  line-height: 1.1;
+  margin-bottom: 0px;
+  margin-top: 0;
+  display: block;
+  color: #8f8f8f !important;
+  transition: color 0.2s, text-shadow 0.22s, transform 0.18s;
+}
+.bottom-menu a:hover,
+.bottom-menu a:focus {
+  color: #4B0082 !important;
+  background: rgba(160,132,202,0.13);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 0 0 8px rgba(160,132,202,0.13);
+  outline: none;
+  border-radius: 999px;
+}
+.bottom-menu a:hover span,
+.bottom-menu a:focus span {
+  color: #4B0082 !important;
+  text-shadow: 0 0 8px #a084ca, 0 0 16px #4B0082;
+  transform: scale(1.13) rotate(-6deg);
+}
+@media (max-width: 600px) {
+  .bottom-menu {
+    height: 60px;
+  }
+  .bottom-menu a {
+    font-size: 0.95em;
+  }
+  .bottom-menu a span {
+    font-size: 1.1em;
+  }
+}
+
+/* Zone filtre catégorie sous la topbar */
+.filter-bar {
+  width: 100vw;
+  background: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0 12px 0;
+  box-sizing: border-box;
+  position: relative;
+}
+.filter-bar-sep {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 2px;
+  background: #b4b4b4;
+  border: none;
+  z-index: 2;
+  pointer-events: none;
+}
+.filter-dropdown-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+}
+.filter-dropdown {
+  background: #7c3aed;
+  color: #fff;
+  border: 2px solid #a084ca;
+  border-radius: 999px;
+  font-size: 0.98em;
+  font-weight: 600;
+  padding: 10px 38px 10px 44px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(75,0,130,0.08);
+  appearance: none;
+  transition: border 0.18s, box-shadow 0.18s, background 0.18s;
+  min-width: 230px;
+  text-align: center;
+  text-align-last: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+}
+.filter-dropdown:focus, .filter-dropdown:hover {
+  border: 2px solid #cbb6f7;
+  background: #a084ca;
+}
+.filter-dropdown option {
+  background: #7c3aed;
+  color: #fff;
+  text-align: center;
+  text-align-last: center;
+  padding: 10px 0;
+}
+/* Centrage options pour Chrome/Safari */
+select.filter-dropdown:focus option, select.filter-dropdown:hover option {
+  text-align: center;
+  text-align-last: center;
+}
+/* Centrage options pour Firefox */
+@-moz-document url-prefix() {
+  .filter-dropdown option {
+    text-align: center;
+    text-align-last: center;
+  }
+}
+.custom-dropdown {
+    position: relative;
+    min-width: 170px;
+    width: 210px;
+    background: #7c3aed;
+    border: 2px solid #a084ca;
+    border-radius: 999px;
+    box-shadow: 0 2px 10px rgba(75,0,130,0.08);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 44px;
+    font-size: 0.98em;
+    font-weight: 600;
+    color: #fff;
+    user-select: none;
+    padding: 0 18px 0 38px;
+  }
+  .custom-dropdown-selected {
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .custom-dropdown-list {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 110%;
+    width: 100%;
+    background: #7c3aed;
+    border: 2px solid #a084ca;
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(75,0,130,0.13);
+    z-index: 10;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 0;
+    min-width: 170px;
+    width: 210px;
+    left: 0;
+    margin-top: 2px;
+  }
+  .custom-dropdown.open .custom-dropdown-list {
+    display: flex;
+  }
+  .custom-dropdown-option {
+    color: #fff;
+    padding: 10px 0 10px 0;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    font-size: 0.98em;
+    font-weight: 600;
+    transition: background 0.15s, color 0.15s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  .custom-dropdown-option:hover, .custom-dropdown-option.selected {
+    background: #a084ca;
+    color: #fff;
+  }
 </style>
 </head>
 <body>
@@ -661,15 +1005,20 @@ function showDetail(index) {
   shopDiv.classList.add("hidden");
   overlayDiv.classList.remove("hidden");
   overlayDiv.innerHTML = `
-    <div class="product-detail">
+    <div class="product-detail product-detail-page">
       <button class="close-overlay" onclick="closeOverlay()">&times;</button>
-      <!-- Ici tu pourras ajouter une vidéo plus tard -->
-      <img src="${p.img}" alt="${p.name}">
+      <div class="product-detail-header">
+        <!-- Vidéo de présentation (à remplacer plus tard) -->
+        <div class="product-detail-video" style="width:100%;height:180px;background:#232323;border-radius:18px;margin-bottom:18px;display:flex;align-items:center;justify-content:center;color:#7c3aed;font-size:1.2em;">Vidéo à venir</div>
+        <img src="${p.img}" alt="${p.name}" class="product-detail-img">
+      </div>
       <h2 class="product-detail-title">${p.name}</h2>
       <div class="product-detail-desc">${p.desc}</div>
-      <div style="color:#fff;font-weight:600;font-size:1.1em;margin:18px 0 6px 0;text-align:center;letter-spacing:0.08em;">VOICI NOS PRIX</div>
-      <div class="price-container">
-        ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
+      <div class="product-detail-prices">
+        <div class="product-detail-prices-label">VOICI NOS PRIX</div>
+        <div class="price-container">
+          ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
+        </div>
       </div>
       <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
     </div>
