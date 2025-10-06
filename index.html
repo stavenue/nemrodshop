@@ -472,7 +472,20 @@
   background: #7c3aed;
   color: #fff;
   text-align: center;
+  text-align-last: center;
   padding: 10px 0;
+}
+/* Centrage options pour Chrome/Safari */
+select.filter-dropdown:focus option, select.filter-dropdown:hover option {
+  text-align: center;
+  text-align-last: center;
+}
+/* Centrage options pour Firefox */
+@-moz-document url-prefix() {
+  .filter-dropdown option {
+    text-align: center;
+    text-align-last: center;
+  }
 }
 .filter-dropdown-arrow {
   position: absolute;
