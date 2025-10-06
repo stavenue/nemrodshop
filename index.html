@@ -808,21 +808,23 @@ renderShop();
 const infoPage = document.getElementById("infoPage");
 const btnMenu = document.getElementById("btnMenu");
 const btnInfo = document.getElementById("btnInfo");
+// ...existing code...
+const filterBar = document.querySelector('.filter-bar');
 
 btnInfo.addEventListener("click", function(e) {
   e.preventDefault();
-  document.getElementById("shop").classList.add("hidden");
-  document.getElementById("overlay-detail").classList.add("hidden");
-  infoPage.classList.remove("hidden");
-  document.querySelector('.filter-bar').classList.add('hidden');
+  shopDiv.style.display = "none";
+  overlayDiv.style.display = "none";
+  infoPage.style.display = "flex";
+  filterBar.style.display = "none";
 });
 
 btnMenu.addEventListener("click", function(e) {
   e.preventDefault();
-  infoPage.classList.add("hidden");
-  document.getElementById("overlay-detail").classList.add("hidden");
-  document.getElementById("shop").classList.remove("hidden");
-  document.querySelector('.filter-bar').classList.remove('hidden');
+  infoPage.style.display = "none";
+  overlayDiv.style.display = "none";
+  shopDiv.style.display = "grid";
+  filterBar.style.display = "flex";
 });
 </script>
 <script>
