@@ -744,34 +744,17 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 // TEST : Vérifie le clic sur le bouton Info
 document.getElementById('btnInfo').addEventListener('click', function(e) {
   e.preventDefault();
-  // Masque tout sauf la page info
-  var shop = document.getElementById('shop');
-  var overlay = document.getElementById('overlay-detail');
-  var info = document.getElementById('infoPage');
-  var filter = document.querySelector('.filter-bar');
-  shop.style.display = 'none';
-  overlay.style.display = 'none';
-  info.style.display = 'flex';
-  filter.style.display = 'none';
-  shop.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-  info.classList.remove('hidden');
-  filter.classList.remove('hidden');
+  document.getElementById('shop').classList.add('hidden');
+  document.getElementById('overlay-detail').classList.add('hidden');
+  document.getElementById('infoPage').classList.remove('hidden');
+  document.querySelector('.filter-bar').classList.add('hidden');
 });
 document.getElementById('btnMenu').addEventListener('click', function(e) {
   e.preventDefault();
-  var shop = document.getElementById('shop');
-  var overlay = document.getElementById('overlay-detail');
-  var info = document.getElementById('infoPage');
-  var filter = document.querySelector('.filter-bar');
-  info.style.display = 'none';
-  overlay.style.display = 'none';
-  shop.style.display = 'grid';
-  filter.style.display = 'flex';
-  shop.classList.remove('hidden');
-  overlay.classList.remove('hidden');
-  info.classList.remove('hidden');
-  filter.classList.remove('hidden');
+  document.getElementById('infoPage').classList.add('hidden');
+  document.getElementById('overlay-detail').classList.add('hidden');
+  document.getElementById('shop').classList.remove('hidden');
+  document.querySelector('.filter-bar').classList.remove('hidden');
   renderShop();
 });
 const products = [
