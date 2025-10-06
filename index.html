@@ -325,18 +325,6 @@
   padding: 0;
   position: relative;
   transition: color 0.2s, box-shadow 0.22s, transform 0.18s, background 0.18s;
-  overflow: hidden;
-  background: none;
-  border: none;
-  min-width: 0;
-  letter-spacing: 0.01em;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding-top: 0;
-  padding-bottom: 0;
 }
 .bottom-menu a span {
   font-size: 1.25em;
@@ -346,6 +334,21 @@
   display: block;
   color: #8f8f8f !important;
   transition: color 0.2s, text-shadow 0.22s, transform 0.18s;
+}
+.bottom-menu a:hover,
+.bottom-menu a:focus {
+  color: #4B0082 !important;
+  background: rgba(160,132,202,0.13);
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: 0 0 0 8px rgba(160,132,202,0.13);
+  outline: none;
+  border-radius: 999px;
+}
+.bottom-menu a:hover span,
+.bottom-menu a:focus span {
+  color: #4B0082 !important;
+  text-shadow: 0 0 8px #a084ca, 0 0 16px #4B0082;
+  transform: scale(1.13) rotate(-6deg);
 }
 @media (max-width: 600px) {
   .bottom-menu {
