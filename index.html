@@ -745,17 +745,33 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 document.getElementById('btnInfo').addEventListener('click', function(e) {
   e.preventDefault();
   // Masque tout sauf la page info
-  document.getElementById('shop').style.display = 'none';
-  document.getElementById('overlay-detail').style.display = 'none';
-  document.getElementById('infoPage').style.display = 'flex';
-  document.querySelector('.filter-bar').style.display = 'none';
+  var shop = document.getElementById('shop');
+  var overlay = document.getElementById('overlay-detail');
+  var info = document.getElementById('infoPage');
+  var filter = document.querySelector('.filter-bar');
+  shop.style.display = 'none';
+  overlay.style.display = 'none';
+  info.style.display = 'flex';
+  filter.style.display = 'none';
+  shop.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  info.classList.remove('hidden');
+  filter.classList.remove('hidden');
 });
 document.getElementById('btnMenu').addEventListener('click', function(e) {
   e.preventDefault();
-  document.getElementById('infoPage').style.display = 'none';
-  document.getElementById('overlay-detail').style.display = 'none';
-  document.getElementById('shop').style.display = 'grid';
-  document.querySelector('.filter-bar').style.display = 'flex';
+  var shop = document.getElementById('shop');
+  var overlay = document.getElementById('overlay-detail');
+  var info = document.getElementById('infoPage');
+  var filter = document.querySelector('.filter-bar');
+  info.style.display = 'none';
+  overlay.style.display = 'none';
+  shop.style.display = 'grid';
+  filter.style.display = 'flex';
+  shop.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+  info.classList.remove('hidden');
+  filter.classList.remove('hidden');
   renderShop();
 });
 const products = [
