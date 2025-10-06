@@ -34,9 +34,9 @@
   overflow: hidden;
 }
 .close-circle {
-  position: absolute;
+  position: fixed;
   left: 50%;
-  bottom: -32px; /* 50% du cercle (64px) sous la fiche */
+  bottom: calc(50vh - 250px + -32px); /* 50vh - moitié de la fiche + moitié du cercle */
   transform: translateX(-50%);
   width: 64px;
   height: 64px;
@@ -47,7 +47,7 @@
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   cursor: pointer;
-  z-index: 10;
+  z-index: 9999;
   transition: background 0.2s, box-shadow 0.2s;
   border: 2px solid #fff;
 }
@@ -713,8 +713,8 @@ function showDetail(index) {
         </div>
         <button class="btn-order" onclick="orderProduct()">COMMANDER</button>
       </div>
-      <div class="close-circle" onclick="closeOverlay()"><span class="close-icon">&times;</span></div>
     </div>
+    <div class="close-circle" onclick="closeOverlay()"><span class="close-icon">&times;</span></div>
   `;
 }
 
