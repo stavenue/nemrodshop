@@ -245,6 +245,21 @@
     letter-spacing: 0.04em;
     text-align: center;
   }
+  .product-detail-title {
+    text-align: center;
+    color: #7c3aed;
+    font-size: 1.25em;
+    font-weight: 700;
+    margin: 14px 0 8px 0;
+    letter-spacing: 0.04em;
+  }
+  .product-detail-desc {
+    color: #fff;
+    font-size: 1em;
+    margin: 8px 0 16px 0;
+    text-align: center;
+    line-height: 1.5;
+  }
   /* Responsive pour mobile */
   @media (max-width: 600px) {
     .products-grid {
@@ -648,9 +663,10 @@ function showDetail(index) {
   overlayDiv.innerHTML = `
     <div class="product-detail">
       <button class="close-overlay" onclick="closeOverlay()">&times;</button>
-      <h2 style="text-align:center;color:#fff;font-size:1.25em;margin:12px 0 8px 0;">${p.name}</h2>
+      <!-- Ici tu pourras ajouter une vidéo plus tard -->
       <img src="${p.img}" alt="${p.name}">
-      <div style="color:#fff;font-size:1em;margin:14px 0 8px 0;text-align:center;">${p.desc}</div>
+      <h2 class="product-detail-title">${p.name}</h2>
+      <div class="product-detail-desc">${p.desc}</div>
       <div style="color:#fff;font-weight:600;font-size:1.1em;margin:18px 0 6px 0;text-align:center;letter-spacing:0.08em;">VOICI NOS PRIX</div>
       <div class="price-container">
         ${p.prices.map(price => `<div class="price">${price}</div>`).join("")}
