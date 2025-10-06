@@ -814,6 +814,7 @@ btnInfo.addEventListener("click", function(e) {
   document.getElementById("shop").classList.add("hidden");
   document.getElementById("overlay-detail").classList.add("hidden");
   infoPage.classList.remove("hidden");
+  document.querySelector('.filter-bar').classList.add('hidden');
 });
 
 btnMenu.addEventListener("click", function(e) {
@@ -821,6 +822,7 @@ btnMenu.addEventListener("click", function(e) {
   infoPage.classList.add("hidden");
   document.getElementById("overlay-detail").classList.add("hidden");
   document.getElementById("shop").classList.remove("hidden");
+  document.querySelector('.filter-bar').classList.remove('hidden');
 });
 </script>
 <script>
