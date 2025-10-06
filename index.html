@@ -413,6 +413,35 @@
     font-size: 1.1em;
   }
 }
+
+/* Zone filtre catégorie sous la topbar */
+.filter-bar {
+  width: 100vw;
+  background: #4d4d4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0 14px 0;
+  box-sizing: border-box;
+}
+.filter-dropdown {
+  background: #fff;
+  color: #4B0082;
+  border: 2px solid #7c3aed;
+  border-radius: 999px;
+  font-size: 1.08em;
+  font-weight: 600;
+  padding: 10px 32px 10px 18px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(75,0,130,0.08);
+  appearance: none;
+  transition: border 0.18s, box-shadow 0.18s;
+}
+.filter-dropdown:focus, .filter-dropdown:hover {
+  border: 2px solid #a084ca;
+  box-shadow: 0 0 0 4px rgba(160,132,202,0.10);
+}
 </style>
 </head>
 <body>
@@ -422,6 +451,14 @@
       <img src="logo.png" alt="Logo Nemrod" class="topbar-logo">
       <span class="topbar-title">NEMROD</span>
     </div>
+  </div>
+  <div class="filter-bar">
+    <select class="filter-dropdown" id="categoryFilter">
+      <option value="all">Toutes les catégories</option>
+      <option value="benzo">Benzodiazépines</option>
+      <option value="opioide">Opioïdes</option>
+      <option value="opiacé">Opiacés</option>
+    </select>
   </div>
 <div class="products-grid" id="shop"></div>
 <div id="overlay-detail" class="overlay-detail hidden"></div>
