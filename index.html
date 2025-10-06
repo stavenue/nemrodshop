@@ -130,8 +130,13 @@
   align-items: stretch;
   justify-content: flex-start;
   overflow: hidden;
-  transition: box-shadow 0.2s, transform 0.2s;
+  transition: box-shadow 0.2s, transform 0.2s, border-color 0.18s;
   cursor: pointer;
+}
+.product:hover {
+  box-shadow: 0 8px 24px 0 rgba(75,0,130,0.18);
+  border-color: #a084ca;
+  transform: translateY(-8px) scale(1.03);
 }
 .product-img-zone {
   flex: 1 1 50%;
