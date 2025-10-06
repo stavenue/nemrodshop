@@ -810,26 +810,30 @@ renderShop();
 </script>
 <script>
 // Gestion affichage page info/menu
-const infoPage = document.getElementById("infoPage");
-const btnMenu = document.getElementById("btnMenu");
-const btnInfo = document.getElementById("btnInfo");
-// ...existing code...
-const filterBar = document.querySelector('.filter-bar');
+document.addEventListener('DOMContentLoaded', function() {
+  const infoPage = document.getElementById("infoPage");
+  const btnMenu = document.getElementById("btnMenu");
+  const btnInfo = document.getElementById("btnInfo");
+  const shopDiv = document.getElementById("shop");
+  const overlayDiv = document.getElementById("overlay-detail");
+  const filterBar = document.querySelector('.filter-bar');
 
-btnInfo.addEventListener("click", function(e) {
-  e.preventDefault();
-  shopDiv.classList.add('hidden');
-  overlayDiv.classList.add('hidden');
-  infoPage.classList.remove('hidden');
-  filterBar.classList.add('hidden');
-});
+  btnInfo.addEventListener("click", function(e) {
+    e.preventDefault();
+    shopDiv.classList.add('hidden');
+    overlayDiv.classList.add('hidden');
+    infoPage.classList.remove('hidden');
+    filterBar.classList.add('hidden');
+  });
 
-btnMenu.addEventListener("click", function(e) {
-  e.preventDefault();
-  infoPage.classList.add('hidden');
-  overlayDiv.classList.add('hidden');
-  shopDiv.classList.remove('hidden');
-  filterBar.classList.remove('hidden');
+  btnMenu.addEventListener("click", function(e) {
+    e.preventDefault();
+    infoPage.classList.add('hidden');
+    overlayDiv.classList.add('hidden');
+    shopDiv.classList.remove('hidden');
+    filterBar.classList.remove('hidden');
+    renderShop();
+  });
 });
 </script>
 <script>
