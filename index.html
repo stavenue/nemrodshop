@@ -649,6 +649,37 @@ function orderProduct() {
 // Initialisation
 renderShop();
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const dropdown = document.getElementById('customDropdown');
+  const selected = document.getElementById('customDropdownSelected');
+  const list = document.getElementById('customDropdownList');
+  const options = list.querySelectorAll('.custom-dropdown-option');
+  let currentValue = 'all';
+
+  dropdown.addEventListener('click', function(e) {
+    dropdown.classList.toggle('open');
+  });
+
+  options.forEach(option => {
+    option.addEventListener('click', function(e) {
+      options.forEach(o => o.classList.remove('selected'));
+      option.classList.add('selected');
+      selected.textContent = option.textContent;
+      currentValue = option.getAttribute('data-value');
+      dropdown.classList.remove('open');
+      // Si tu veux filtrer les produits, déclenche ici
+      // filterProducts(currentValue);
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove('open');
+    }
+  });
+});
+</script>
 <!-- Place la ligne fine DANS la barre du bas -->
 <nav class="bottom-menu">
   <div class="bottom-menu-sep"></div>
