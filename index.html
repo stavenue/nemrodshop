@@ -689,12 +689,22 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 }
 .info-content {
   color: #fff;
-  font-size: 0.9em;
+  font-size: 0.95em;
   text-align: center;
   line-height: 1.7;
   width: 100%;
-  max-width: 420px;
+  max-width: 340px;
   margin: 0 auto;
+  padding: 0 12px;
+  font-family: "Poppins", "Arial", sans-serif;
+  border-radius: 18px;
+}
+@media (max-width: 600px) {
+  .info-content {
+    max-width: 96vw;
+    padding: 0 8vw;
+    font-size: 1em;
+  }
 }
 .info-content a {
   color: #7c3aed;
