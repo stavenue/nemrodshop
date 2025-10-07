@@ -35,36 +35,31 @@
     color: #4B0082;
     text-align: center;
   }
-  .info-content {
-    max-width: 430px;
-    margin: 32px auto 140px auto;
-    padding: 0;
-    box-sizing: border-box;
+  .info-page {
+    display: block;
+  }
+  .info-page h1 {
+    color: #7c3aed;
     text-align: center;
-    color: #fff;
-  }
-  .info-content h2 {
-    color: #7c3aed;
-    font-size: 1.5em;
+    font-size: 2em;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-top: 24px;
+    margin-bottom: 32px;
+    letter-spacing: 0.04em;
   }
-  .info-content h3 {
-    color: #7c3aed;
-    font-size: 1.2em;
-    font-weight: 600;
-    margin: 12px 0 8px 0;
-    text-align: left;
+  .info-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.15em;
+    color: #fff;
+    line-height: 1.7;
   }
   .info-content p {
-    color: #fff;
-    font-size: 1.1em;
-    margin-bottom: 10px;
-    text-align: left;
+    margin-bottom: 24px;
   }
-  .info-content .contact, .info-content .livraison {
-    color: #b4b4b4;
-    font-size: 0.95em;
+  .info-content a {
+    color: #7c3aed;
   }
   .bottom-menu {
     position: fixed;
@@ -149,14 +144,13 @@
 </head>
 <body>
   <div class="topbar"><span class="topbar-title">Informations</span></div>
-  <div class="info-content" style="max-width:430px;margin:32px auto 140px auto;padding:0 12px;text-align:center;">
-    <h2>À propos de notre boutique Nemrod</h2>
-    <h3>Qui sommes-nous ?</h3>
-    <p>Nemrod est un shop spécialisé dans la vente de produits pharmaceutiques. Nous proposons des produits de qualité, livrés rapidement et discrètement.</p>
-    <h3>Comment commander ?</h3>
-    <p>Pour commander, cliquez sur le bouton "Commander" d'un produit ou contactez-nous sur Telegram via le canal en bas.</p>
-    <h3>Contact</h3>
-    <p>Pour toute question, contactez-nous sur Telegram : <b>@ia00100</b></p>
+  <div class="info-page" id="infoPage" style="display:block;">
+    <h1 style="color:#7c3aed; text-align:center; font-size:2em; font-weight:700; margin-top:24px; margin-bottom:32px; letter-spacing:0.04em;">À propos de notre boutique Nemrod</h1>
+    <div class="info-content" style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.15em; color: #fff; line-height: 1.7;">
+      <p style="margin-bottom: 24px;"><b>Qui sommes-nous ?</b><br>Nemrod est un shop spécialisé dans la vente de produits pharmaceutiques. Nous proposons des produits de qualité, livrés rapidement et discrètement.</p>
+      <p style="margin-bottom: 24px;"><b>Comment commander ?</b><br>Pour commander, cliquez sur le bouton "Commander" d'un produit ou contactez-nous sur Telegram via le canal en bas.</p>
+      <p><b>Contact</b><br>Pour toute question, contactez-nous sur Telegram : <a href="https://t.me/ia00100" target="_blank" style="color:#7c3aed;">@ia00100</a></p>
+    </div>
   </div>
   <nav class="bottom-menu">
     <div class="bottom-menu-sep"></div>
