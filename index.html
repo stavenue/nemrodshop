@@ -727,7 +727,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
           <div class="custom-dropdown-option selected" data-value="all">Toutes les catégories</div>
           <div class="custom-dropdown-option" data-value="benzo">Benzodiazépines</div>
           <div class="custom-dropdown-option" data-value="opioide">Opioïdes</div>
-          <div class="custom-dropdown-option" data-value="opiacé">Opiacés</div>
+          <div class="custom-dropdown-option" data-value="sirop">Sirop</div>
         </div>
       </div>
     </div>
@@ -847,8 +847,8 @@ document.addEventListener('DOMContentLoaded', function() {
 function filterProducts(category) {
   let filtered = products;
   if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem'));
-  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('euphon'));
-  else if (category === 'opiacé') filtered = products.filter(p => p.name.toLowerCase().includes('opiac'));
+  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol'));
+  else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('paderyl') || p.name.toLowerCase().includes('toseina'));
   // 'all' affiche tout
   shopDiv.innerHTML = "";
   filtered.forEach((p, index) => {
