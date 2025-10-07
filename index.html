@@ -890,16 +890,17 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdown.classList.toggle('open');
   });
 
-  list.addEventListener('click', function(e) {
-    const option = e.target.closest('.custom-dropdown-option');
-    if (option) {
+  options.forEach(option => {
+    option.addEventListener('mousedown', function(e) {
+      // Utilise mousedown pour fermer avant le blur
       options.forEach(o => o.classList.remove('selected'));
       option.classList.add('selected');
       selected.textContent = option.textContent;
       currentValue = option.getAttribute('data-value');
-      dropdown.classList.remove('open'); // Ferme le menu déroulant après sélection
+      dropdown.classList.remove('open'); // Force la fermeture
       filterProducts(currentValue);
-    }
+      e.stopPropagation();
+    });
   });
 
   document.addEventListener('click', function(e) {
