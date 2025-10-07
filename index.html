@@ -727,7 +727,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
           <div class="custom-dropdown-option selected" data-value="all">Toutes les catégories</div>
           <div class="custom-dropdown-option" data-value="benzo">Benzodiazépines</div>
           <div class="custom-dropdown-option" data-value="opioide">Opioïdes</div>
-          <div class="custom-dropdown-option" data-value="opiacé">Opiacés</div>
+          <div class="custom-dropdown-option" data-value="sirop">Sirop</div>
         </div>
       </div>
     </div>
@@ -749,8 +749,13 @@ const products = [
   { name: "Euphon 🧴", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 150€", "5 flacons = 250€"] },
   { name: "Xanax 0.50mg 💊", img: "images/alprazolam50.png", desc: "L'Alprazolam aide pour l'anxiété et à mieux dormir.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
   { name: "Zolpidem 💊", img: "images/zolpidem.png", desc: "Le Zolpidem aide pour l'anxiété et à mieux dormir", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
-  { name: "Tramadol 50mg 💊", img: "https://via.placeholder.com/300x200", desc: "Description du produit 4", prices: ["20€", "25€", "30€"] },
-  { name: "Tramadol 200mg 💊", img: "https://via.placeholder.com/300x200", desc: "Description du produit 5", prices: ["30€", "35€", "40€"] },
+  { name: "Tramadol 50mg 💊", img: "images/tramadol50.png", desc: "Le Tramadol 50mg est un antalgique utilisé pour traiter les douleurs modérées à sévères.", prices: ["1 boite = 25€", "3 boites = 60€", "5 boites = 90€"] },
+  { name: "Tramadol 200mg 💊", img: "images/tramadol200.png", desc: "Le Tramadol 200mg est utilisé pour les douleurs plus intenses, à libération prolongée.", prices: ["1 boite = 35€", "3 boites = 90€", "5 boites = 140€"] },
+  { name: "Valium 10mg 💊", img: "images/valium10.png", desc: "Le Valium est prescrit pour l'anxiété, les spasmes musculaires et les troubles du sommeil.", prices: ["1 boite = 22€", "3 boites = 55€", "5 boites = 85€"] },
+  { name: "Rivotril 2mg 💊", img: "images/rivotril2.png", desc: "Le Rivotril est utilisé pour traiter l'épilepsie et certains troubles anxieux.", prices: ["1 plaquette = 18€", "3 plaquettes = 45€", "5 plaquettes = 70€"] },
+  { name: "Lysanxia 10mg 💊", img: "images/lysanxia10.png", desc: "Lysanxia est utilisé pour l'anxiété et les troubles du sommeil.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
+  { name: "Tussipax 🧴", img: "images/tussipax.png", desc: "Tussipax est un sirop antitussif puissant à base de codéine et d'éthylmorphine.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
+  { name: "Biocalyptol 🧴", img: "images/biocalyptol.png", desc: "Biocalyptol est un sirop pour la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
 ];
 
 const shopDiv = document.getElementById("shop");
@@ -844,9 +849,9 @@ document.addEventListener('DOMContentLoaded', function() {
 <script>
 function filterProducts(category) {
   let filtered = products;
-  if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem'));
-  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('euphon'));
-  else if (category === 'opiacé') filtered = products.filter(p => p.name.toLowerCase().includes('opiac'));
+  if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem') || p.name.toLowerCase().includes('valium') || p.name.toLowerCase().includes('rivotril') || p.name.toLowerCase().includes('lysanxia'));
+  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol'));
+  else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('tussipax') || p.name.toLowerCase().includes('biocalyptol'));
   // 'all' affiche tout
   shopDiv.innerHTML = "";
   filtered.forEach((p, index) => {
