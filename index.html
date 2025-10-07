@@ -758,12 +758,14 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 <script>
 const products = [
   { name: "Euphon 🧴", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 150€", "5 flacons = 250€"] },
-  { name: "Xanax 0.50mg 💊", img: "images/alprazolam50.png", desc: "L'Alprazolam aide pour l'anxiété et à mieux dormir.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
+  { name: "Xanax 0.50mg 💊", img: "images/alprazolam50.png", desc: "L'Alprazolam 0.50mg aide à réduire l'anxiété et favorise le sommeil.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
+  { name: "Xanax 1mg 💊", img: "images/xanax1mg.png", desc: "Le Xanax 1mg est utilisé pour traiter les troubles anxieux sévères et les crises de panique. Dosage plus fort pour une action rapide.", prices: ["1 boite = 28€", "3 boites = 70€", "5 boites = 110€"] },
+  { name: "Xanax 2mg 💊", img: "images/xanax2mg.png", desc: "Le Xanax 2mg est réservé aux cas d'anxiété très intense. Effet puissant, à utiliser sous contrôle médical.", prices: ["1 boite = 38€", "3 boites = 95€", "5 boites = 150€"] },
   { name: "Zolpidem 💊", img: "images/zolpidem.png", desc: "Le Zolpidem aide pour l'anxiété et à mieux dormir", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
-  { name: "Tramadol 50mg 💊", img: "images/trama50.png", desc: "Description du produit 4", prices: ["20€", "25€", "30€"] }, 
-  { name: "Tramadol 200mg 💊", img: "images/trama200.png", desc: "Description du produit 5", prices: ["30€", "35€", "40€"] },
-  { name: "Paderyl 🧴", img: "images/paderyl.jpg", desc: "Paderyl est un sirop antitussif puissant à base de codéine, utilisé pour calmer la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
-  { name: "Toseina 🧴", img: "images/toseina.jpg", desc: "Toseina est un sirop à base de codéine, prescrit pour soulager la toux sèche persistante et faciliter le confort respiratoire.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
+  { name: "Tramadol 50mg 💊", img: "https://via.placeholder.com/300x200", desc: "Description du produit 4", prices: ["20€", "25€", "30€"] },
+  { name: "Tramadol 200mg 💊", img: "https://via.placeholder.com/300x200", desc: "Description du produit 5", prices: ["30€", "35€", "40€"] },
+  { name: "Paderyl 🧴", img: "images/paderyl.png", desc: "Paderyl est un sirop antitussif puissant à base de codéine, utilisé pour calmer la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
+  { name: "Toseina 🧴", img: "images/toseina.png", desc: "Toseina est un sirop à base de codéine, prescrit pour soulager la toux sèche persistante et faciliter le confort respiratoire.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
 ];
 
 const shopDiv = document.getElementById("shop");
