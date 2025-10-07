@@ -890,15 +890,16 @@ document.addEventListener('DOMContentLoaded', function() {
     dropdown.classList.toggle('open');
   });
 
-  options.forEach(option => {
-    option.addEventListener('click', function(e) {
+  list.addEventListener('click', function(e) {
+    const option = e.target.closest('.custom-dropdown-option');
+    if (option) {
       options.forEach(o => o.classList.remove('selected'));
       option.classList.add('selected');
       selected.textContent = option.textContent;
       currentValue = option.getAttribute('data-value');
       dropdown.classList.remove('open'); // Ferme le menu déroulant après sélection
       filterProducts(currentValue);
-    });
+    }
   });
 
   document.addEventListener('click', function(e) {
