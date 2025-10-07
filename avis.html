@@ -198,16 +198,17 @@
       const comment = document.getElementById('avisComment').value.trim();
       const photoInput = document.getElementById('avisPhoto');
       let photoUrl = '';
+      const starsValue = Number(selectedStars);
       if(photoInput.files && photoInput.files[0]) {
         const reader = new FileReader();
         reader.onload = function(evt) {
           photoUrl = evt.target.result;
-          addAvis(comment, selectedStars, photoUrl);
+          addAvis(comment, starsValue, photoUrl);
           openAvisModal.style.display = 'block';
         };
         reader.readAsDataURL(photoInput.files[0]);
       } else {
-        addAvis(comment, selectedStars, '');
+        addAvis(comment, starsValue, '');
         openAvisModal.style.display = 'block';
       }
       avisModalBg.style.display = 'none';
