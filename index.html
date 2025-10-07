@@ -896,7 +896,7 @@ document.addEventListener('DOMContentLoaded', function() {
       option.classList.add('selected');
       selected.textContent = option.textContent;
       currentValue = option.getAttribute('data-value');
-      dropdown.classList.remove('open');
+      dropdown.classList.remove('open'); // Ferme le menu déroulant après sélection
       filterProducts(currentValue);
     });
   });
