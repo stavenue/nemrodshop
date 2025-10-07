@@ -162,8 +162,16 @@
     // Modal logic
     const openAvisModal = document.getElementById('openAvisModal');
     const avisModalBg = document.getElementById('avisModalBg');
-    openAvisModal.onclick = () => avisModalBg.style.display = 'flex';
-    avisModalBg.onclick = (e) => { if(e.target === avisModalBg) avisModalBg.style.display = 'none'; };
+    openAvisModal.onclick = () => {
+      openAvisModal.style.display = 'none';
+      avisModalBg.style.display = 'flex';
+    };
+    avisModalBg.onclick = (e) => {
+      if(e.target === avisModalBg) {
+        avisModalBg.style.display = 'none';
+        openAvisModal.style.display = 'block';
+      }
+    };
     // Star selection logic
     const stars = document.querySelectorAll('.avis-modal .star');
     let selectedStars = 0;
