@@ -194,10 +194,12 @@
         reader.onload = function(evt) {
           photoUrl = evt.target.result;
           addAvis(comment, selectedStars, photoUrl);
+          openAvisModal.style.display = 'block';
         };
         reader.readAsDataURL(photoInput.files[0]);
       } else {
         addAvis(comment, selectedStars, '');
+        openAvisModal.style.display = 'block';
       }
       avisModalBg.style.display = 'none';
       document.getElementById('avisComment').value = '';
