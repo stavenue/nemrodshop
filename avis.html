@@ -27,12 +27,85 @@
     .avis-modal .star { font-size: 2em; color: #b4b4b4; cursor: pointer; transition: color 0.18s; margin: 0 4px; }
     .avis-modal .star.selected { color: #7c3aed; }
     .avis-modal .btn-send { background: linear-gradient(90deg,#4B0082 60%,#7c3aed 100%); color: #fff; border: none; border-radius: 32px; padding: 12px 32px; font-size: 1.1em; font-weight: 600; cursor: pointer; margin-top: 8px; }
-    .bottom-menu { display: flex; justify-content: space-around; align-items: center; background: #232323; height: 70px; padding: 0 10px; position: fixed; left: 0; bottom: 0; width: 100%; box-shadow: 0 -2px 10px rgba(0,0,0,0.10); z-index: 99; }
-    .bottom-menu-sep { height: 24px; width: 1px; background: rgba(255,255,255,0.1); }
-    .bottom-menu a { color: #fff; text-decoration: none; font-size: 0.9em; font-weight: 600; display: flex; flex-direction: column; align-items: center; }
-    .bottom-menu a:hover { color: #7c3aed; }
-    .bottom-menu a span { display: block; }
-    .bottom-menu a span:first-child { font-size: 1.3em; }
+    .bottom-menu {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      width: 100vw;
+      background: #4d4d4d !important;
+      height: 100px !important;
+      min-height: 100px !important;
+      max-height: 100px !important;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 100;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      overflow: hidden;
+      padding: 0;
+    }
+    .bottom-menu-sep {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 2px;
+      background: #b4b4b4 !important;
+      margin: 0;
+      padding: 0;
+      border: none;
+      z-index: 101;
+      display: block;
+      pointer-events: none;
+    }
+    .bottom-menu a {
+      flex: 1;
+      text-align: center;
+      color: #8f8f8f !important;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 0;
+      position: relative;
+      transition: color 0.2s, box-shadow 0.22s, transform 0.18s, background 0.18s;
+    }
+    .bottom-menu a span {
+      font-size: 1.25em;
+      line-height: 1.1;
+      margin-bottom: 0px;
+      margin-top: 0;
+      display: block;
+      color: #8f8f8f !important;
+      transition: color 0.2s, text-shadow 0.22s, transform 0.18s;
+    }
+    .bottom-menu a:hover,
+    .bottom-menu a:focus {
+      color: #4B0082 !important;
+      background: rgba(160,132,202,0.13);
+      transform: translateY(-4px) scale(1.08);
+      box-shadow: 0 0 0 8px rgba(160,132,202,0.13);
+      outline: none;
+      border-radius: 999px;
+    }
+    .bottom-menu a:hover span,
+    .bottom-menu a:focus span {
+      color: #4B0082 !important;
+      text-shadow: 0 0 8px #a084ca, 0 0 16px #4B0082;
+      transform: scale(1.13) rotate(-6deg);
+    }
+    @media (max-width: 600px) {
+      .bottom-menu {
+        height: 60px;
+      }
+      .bottom-menu a {
+        font-size: 0.95em;
+      }
+      .bottom-menu a span {
+        font-size: 1.1em;
+      }
+    }
   </style>
 </head>
 <body>
