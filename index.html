@@ -115,6 +115,10 @@
     background-color: #2c2c2c;
     color: #4B0082;
     text-align: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
 
   h1 {
@@ -127,9 +131,10 @@
 .products-grid {
   max-width: 360px;
   width: 100%;
-  margin: 32px auto 20px auto;
+  margin: 32px auto 120px auto; /* espace pour le menu bas */
   padding: 0 4px;
   box-sizing: border-box;
+  overflow-y: auto;
 }
   .products-grid {
     display: grid;
@@ -669,6 +674,8 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
   z-index: 50;
   top: 0;
   left: 0;
+  overflow-y: auto;
+  padding-bottom: 120px; /* espace pour le menu bas */
 }
 .info-card {
   background: #232323;
@@ -754,8 +761,8 @@ const products = [
   { name: "Valium 10mg 💊", img: "images/valium10.png", desc: "Le Valium est prescrit pour l'anxiété, les spasmes musculaires et les troubles du sommeil.", prices: ["1 boite = 22€", "3 boites = 55€", "5 boites = 85€"] },
   { name: "Rivotril 2mg 💊", img: "images/rivotril2.png", desc: "Le Rivotril est utilisé pour traiter l'épilepsie et certains troubles anxieux.", prices: ["1 plaquette = 18€", "3 plaquettes = 45€", "5 plaquettes = 70€"] },
   { name: "Lysanxia 10mg 💊", img: "images/lysanxia10.png", desc: "Lysanxia est utilisé pour l'anxiété et les troubles du sommeil.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
-  { name: "Tussipax 🧴", img: "images/tussipax.png", desc: "Tussipax est un sirop antitussif puissant à base de codéine et d'éthylmorphine.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
-  { name: "Biocalyptol 🧴", img: "images/biocalyptol.png", desc: "Biocalyptol est un sirop pour la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
+  { name: "Paderyl 🧴", img: "images/paderyl.png", desc: "Paderyl est un sirop antitussif puissant à base de codéine, utilisé pour calmer la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
+  { name: "Toseina 🧴", img: "images/toseina.png", desc: "Toseina est un sirop à base de codéine, prescrit pour soulager la toux sèche persistante et faciliter le confort respiratoire.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
 ];
 
 const shopDiv = document.getElementById("shop");
@@ -851,7 +858,7 @@ function filterProducts(category) {
   let filtered = products;
   if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem') || p.name.toLowerCase().includes('valium') || p.name.toLowerCase().includes('rivotril') || p.name.toLowerCase().includes('lysanxia'));
   else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol'));
-  else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('tussipax') || p.name.toLowerCase().includes('biocalyptol'));
+  else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('paderyl') || p.name.toLowerCase().includes('toseina'));
   // 'all' affiche tout
   shopDiv.innerHTML = "";
   filtered.forEach((p, index) => {
