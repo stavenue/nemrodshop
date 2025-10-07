@@ -220,8 +220,16 @@
     function addAvis(comment, stars, photoUrl) {
       const avisDiv = document.createElement('div');
       avisDiv.className = 'avis-item';
+      let starsHtml = '';
+      for(let i=1; i<=5; i++) {
+        if(i <= stars) {
+          starsHtml += '<span style="color:#7c3aed;font-size:1.3em;">&#9733;</span>';
+        } else {
+          starsHtml += '<span style="color:#b4b4b4;font-size:1.3em;">&#9733;</span>';
+        }
+      }
       avisDiv.innerHTML = `
-        <div class="avis-stars">${'<span style=\'color:#7c3aed;font-size:1.3em;\'>&#9733;</span>'.repeat(stars)}${'<span style=\'color:#b4b4b4;font-size:1.3em;\'>&#9733;</span>'.repeat(5-stars)}</div>
+        <div class="avis-stars">${starsHtml}</div>
         <div class="avis-pseudo">Client anonyme</div>
         ${photoUrl ? `<img src="${photoUrl}" class="avis-photo">` : ''}
         <div class="avis-comment">${comment}</div>
