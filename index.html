@@ -740,6 +740,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
           <div class="custom-dropdown-option" data-value="benzo">Benzodiazépines</div>
           <div class="custom-dropdown-option" data-value="opioide">Opioïdes</div>
           <div class="custom-dropdown-option" data-value="sirop">Sirop</div>
+          <div class="custom-dropdown-option" data-value="antihistaminique">Antihistaminique</div>
         </div>
       </div>
     </div>
@@ -758,15 +759,19 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
 
 <script>
 const products = [
-  { name: "Euphon 🧴", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 150€", "5 flacons = 250€"] },
-  { name: "Xanax 0.50mg 💊", img: "images/alprazolam50.png", desc: "L'Alprazolam 0.50mg aide à réduire l'anxiété et favorise le sommeil.", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
-  { name: "Xanax 1mg 💊", img: "images/xanax1mg.png", desc: "Le Xanax 1mg est utilisé pour traiter les troubles anxieux sévères et les crises de panique. Dosage plus fort pour une action rapide.", prices: ["1 boite = 28€", "3 boites = 70€", "5 boites = 110€"] },
-  { name: "Xanax 2mg 💊", img: "images/xanax2mg.png", desc: "Le Xanax 2mg est réservé aux cas d'anxiété très intense. Effet puissant, à utiliser sous contrôle médical.", prices: ["1 boite = 38€", "3 boites = 95€", "5 boites = 150€"] },
-  { name: "Zolpidem 💊", img: "images/zolpidem.png", desc: "Le Zolpidem aide pour l'anxiété et à mieux dormir", prices: ["1 boite = 20€", "3 boites = 50€", "5 boites = 80€"] },
-  { name: "Tramadol 50mg 💊", img: "images/trama50.png", desc: "Le Tramadol 50mg est un antalgique opioïde utilisé pour soulager les douleurs modérées à sévères. Il agit rapidement et convient pour les douleurs post-opératoires ou chroniques.", prices: ["1 boite = 25€", "3 boites = 60€", "5 boites = 90€"] },
-  { name: "Tramadol 200mg 💊", img: "images/trama200.png", desc: "Le Tramadol 200mg est un antalgique à libération prolongée, recommandé pour les douleurs intenses et persistantes. Son action durable apporte un confort optimal au patient.", prices: ["1 boite = 35€", "3 boites = 90€", "5 boites = 140€"] },
-  { name: "Paderyl 🧴", img: "images/paderyl.jpg", desc: "Paderyl est un sirop antitussif puissant à base de codéine, utilisé pour calmer la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 65€", "3 flacons = 160€", "5 flacons = 270€"] },
-  { name: "Toseina 🧴", img: "images/toseina.jpg", desc: "Toseina est un sirop à base de codéine, prescrit pour soulager la toux sèche persistante et faciliter le confort respiratoire.", prices: ["1 flacon = 55€", "3 flacons = 135€", "5 flacons = 220€"] },
+  { name: "Euphon 🧴", img: "images/euphon.png", desc: "l'Euphon est dans un flacon de 300 ml, c'est un sirop adoucissant utilisé pour soulager les irritations de la gorge et calmer la toux sèche à base de codéine.", prices: ["1 flacon = 60€", "3 flacons = 160€", "5 flacons = 250€"] },
+  { name: "Xanax 0.50mg 💊", img: "images/alprazolam50.png", desc: "L'Alprazolam 0.50mg aide à réduire l'anxiété et favorise le sommeil.", prices: ["1 boite = 20€", "3 boites = 40€", "5 boites = 80€"] },
+  { name: "Xanax 1mg 💊", img: "images/xanax1mg.png", desc: "Le Xanax 1mg est utilisé pour traiter les troubles anxieux sévères et les crises de panique. Dosage plus fort pour une action rapide.", prices: ["1 boite = 40€", "3 boites = 100€", "5 boites = 150€"] },
+  { name: "Xanax 2mg 💊", img: "images/xanax2mg.png", desc: "Le Xanax 2mg est réservé aux cas d'anxiété très intense. Effet puissant.", prices: ["1 boite = 70€", "3 boites = 200€", "5 boites = 300€"] },
+  { name: "Zolpidem 💊", img: "images/zolpidem.png", desc: "Le Zolpidem aide pour l'anxiété et à mieux dormir", prices: ["1 boite = 35€", "3 boites = 90€", "5 boites = 150€"] },
+  { name: "Tramadol 50mg 💊", img: "images/trama50.png", desc: "Le Tramadol 50mg est un antalgique opioïde utilisé pour soulager les douleurs modérées à sévères. Il agit rapidement et convient pour les douleurs post-opératoires ou chroniques.", prices: ["1 boite = 25€", "3 boites = 60€", "5 boites = 95€"] },
+  { name: "Tramadol 200mg 💊", img: "images/trama200.png", desc: "Le Tramadol 200mg est un antalgique à libération prolongée, recommandé pour les douleurs intenses et persistantes. Son action durable apporte un confort optimal au patient.", prices: ["1 boite = 40€", "3 boites = 100€", "5 boites = 160€"] },
+  { name: "Paderyl 🧴", img: "images/paderyl.jpg", desc: "Paderyl est un sirop antitussif puissant à base de codéine, utilisé pour calmer la toux sèche et les irritations de la gorge.", prices: ["1 flacon = 80€", "3 flacons = 220€", "5 flacons = 350€"] },
+  { name: "Toseina 🧴", img: "images/toseina.jpg", desc: "Toseina est un sirop à base de codéine, prescrit pour soulager la toux sèche persistante et faciliter le confort respiratoire.", prices: ["1 flacon = 120€", "3 flacons = 340€", "5 flacons = 550€"] },
+  { name: "Phenergan 🟢", img: "images/phenergan.png", desc: "Phenergan est un antihistaminique utilisé pour traiter les allergies, les nausées et comme sédatif léger.", prices: ["1 boite = 25€", "3 boites = 60€", "5 boites = 90€"] },
+  { name: "Skenan 💊", img: "images/skenan.png", desc: "Skenan est un opioïde puissant utilisé pour le traitement des douleurs sévères.", prices: ["1 boite = 60€", "3 boites = 160€", "5 boites = 250€"] },
+  { name: "Bromazépam 💊", img: "images/bromazepam.png", desc: "Le Bromazépam est une benzodiazépine utilisée pour l'anxiété et les troubles du sommeil.", prices: ["1 boite = 30€", "3 boites = 75€", "5 boites = 120€"] },
+  { name: "Dicodin 💊", img: "images/dicodin.png", desc: "Dicodin est un antalgique opioïde utilisé pour soulager les douleurs modérées à sévères.", prices: ["1 boite = 35€", "3 boites = 90€", "5 boites = 140€"] },
 ];
 
 const shopDiv = document.getElementById("shop");
@@ -834,9 +839,10 @@ renderShop();
 <script>
 function filterProducts(category) {
   let filtered = products;
-  if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem'));
-  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol'));
+  if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem') || p.name.toLowerCase().includes('bromazépam'));
+  else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol') || p.name.toLowerCase().includes('skenan') || p.name.toLowerCase().includes('dicodin'));
   else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('paderyl') || p.name.toLowerCase().includes('toseina'));
+  else if (category === 'antihistaminique') filtered = products.filter(p => p.name.toLowerCase().includes('phenergan'));
   // 'all' affiche tout
   shopDiv.innerHTML = "";
   filtered.forEach((p, index) => {
