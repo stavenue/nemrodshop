@@ -258,6 +258,16 @@
     object-fit: cover;
     display: block;
   }
+  /* larger product image for detail overlay */
+  img.product-detail-image {
+    width: 94%;
+    max-height: 220px;
+    border-radius: 18px;
+    margin: 0 0 18px 0;
+    box-shadow: 0 4px 18px 0 rgba(75,0,130,0.12);
+    object-fit: cover;
+    display: block;
+  }
   .product-detail h2 {
     color: #fff;
     font-size: 1.22em;
@@ -802,7 +812,7 @@ function showDetail(index) {
   overlayDiv.innerHTML = `
     <div class="product-detail">
       <div class="product-detail-scroll">
-        <div class="product-detail-video">Vidéo à venir</div>
+        <img src="${p.img}" alt="${p.name}" class="product-detail-image">
         <h2 class="product-detail-title">${p.name}</h2>
         <div class="product-detail-desc">${p.desc}</div>
         <div class="product-detail-prices-label">VOICI NOS PRIX</div>
