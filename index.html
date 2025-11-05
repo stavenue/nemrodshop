@@ -760,7 +760,7 @@ select.filter-dropdown:focus option, select.filter-dropdown:hover option {
           <div class="custom-dropdown-option" data-value="benzo">Benzodiazépines</div>
           <div class="custom-dropdown-option" data-value="opioide">Opioïdes</div>
           <div class="custom-dropdown-option" data-value="sirop">Sirop</div>
-          <div class="custom-dropdown-option" data-value="prométhazine">Prométhazine</div>
+          <div class="custom-dropdown-option" data-value="promethazine">Prométhazine</div>
         </div>
       </div>
     </div>
@@ -859,7 +859,7 @@ function filterProducts(category) {
   if (category === 'benzo') filtered = products.filter(p => p.name.toLowerCase().includes('xanax') || p.name.toLowerCase().includes('zolpidem') || p.name.toLowerCase().includes('bromazépam'));
   else if (category === 'opioide') filtered = products.filter(p => p.name.toLowerCase().includes('tramadol') || p.name.toLowerCase().includes('skenan') || p.name.toLowerCase().includes('dicodin'));
   else if (category === 'sirop') filtered = products.filter(p => p.name.toLowerCase().includes('euphon') || p.name.toLowerCase().includes('paderyl') || p.name.toLowerCase().includes('toseina'));
-  else if (category === 'prométhazine') filtered = products.filter(p => p.name.toLowerCase().includes('phenergan'));
+  else if (category === 'promethazine') filtered = products.filter(p => p.name.toLowerCase().includes('phenergan'));
   // 'all' affiche tout
   shopDiv.innerHTML = "";
   filtered.forEach((p, index) => {
