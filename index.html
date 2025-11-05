@@ -260,13 +260,23 @@
   }
   /* larger product image for detail overlay */
   img.product-detail-image {
-    width: 94%;
-    max-height: 220px;
+    width: 90%;
+    max-height: 160px; /* reduced to keep COMMANDER visible */
     border-radius: 18px;
-    margin: 0 0 18px 0;
+    margin: 10px auto 18px auto; /* center horizontally */
     box-shadow: 0 4px 18px 0 rgba(75,0,130,0.12);
     object-fit: cover;
     display: block;
+  }
+
+  /* make detail content scrollable so the COMMANDER button is always reachable */
+  .product-detail-scroll {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 12px 12px 12px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: calc(500px - 28px); /* allow space for close circle */
   }
   .product-detail h2 {
     color: #fff;
